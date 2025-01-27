@@ -19,12 +19,7 @@ def generate_prompts(product_name, product_description, target_market, product_p
 def main():
   st.title("Product Prompt Generator")
 
-
-  if 'password_entered' not in st.session_state:
-    st.session_state.password_entered = False
-
-  if not st.session_state.password_entered:
-    password = st.text_input("Password:", type="password")
+ 
     if st.button("Enter"):
       if password == "superpeter":
         st.session_state.password_entered = True
