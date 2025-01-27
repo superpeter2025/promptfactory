@@ -1,7 +1,4 @@
-#generates text file with ten prompts
-
 import streamlit as st
-
 
 def generate_prompts(product_name, product_description, target_market, product_price):
     prompts = [
@@ -22,7 +19,23 @@ def generate_prompts(product_name, product_description, target_market, product_p
 def main():
     st.title("Product Prompt Generator")
 
-    # Initialize session state
+    if 'password_entered' not in st.session_state:
+        st.session_state.password_entered = False
+
+    if not st.session_state.password_entered:
+        password = st.text_input("Password:", type="password")
+        if st.button("Enter"):
+            if password == "superpeter":
+                st.session_state.password_entered = True
+                st.success("Welcome! 😊")
+                st.rerun()  # Changed from experimental_rerun() to rerun()
+            else:
+                st.error("Incorrect password.")
+        return  # Stop execution if password not entered
+
+    # Password is correct, proceed with the app
+
+    # Initialize session state for prompts
     if 'all_prompts' not in st.session_state:
         st.session_state.all_prompts = []
 
