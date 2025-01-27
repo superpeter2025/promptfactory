@@ -20,7 +20,7 @@ def main():
   st.title("Product Prompt Generator")
 
   # Message on the left-hand side
-  st.sidebar.markdown("To receive more free apps for AUTOMATIC prompt generation for all aspects of your startup or business, please send an email to peter.sheceo@gmail.com.")
+  st.sidebar.markdown("To receive more free apps for AUTOMATIC prompt generation for all aspects of your startup or business, please send an email to peter.sheceo@gmail.com. Also join our FREE Facebook group at www.tinyurl.com/makemoneyfromchatgpt")
 
   if 'password_entered' not in st.session_state:
     st.session_state.password_entered = False
